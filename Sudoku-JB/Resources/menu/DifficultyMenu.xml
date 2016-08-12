@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="@string/easy_label"
+          android:numericShortcut="0"/>
+    <item android:title="@string/medium_label"
+          android:numericShortcut="1"/>
+    <item android:title="@string/hard_label"
+          android:numericShortcut="2"/>
+</menu>
