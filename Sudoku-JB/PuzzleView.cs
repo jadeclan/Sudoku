@@ -5,6 +5,7 @@ using Android.Graphics;
 using Android.Util;
 using static Android.Graphics.Paint;
 using Android.Runtime;
+using Android.Views.Animations;
 
 namespace Sudoku_JB
 {
@@ -21,8 +22,8 @@ namespace Sudoku_JB
         public PuzzleView(Context context) : base(context)
         {
             this.game = (GameActivity)context;
-            // setFocusable(true);
-            // setFocusableInTouchMode(true);
+            this.RequestFocus();
+            this.RequestFocusFromTouch();
         }
 
         protected override void OnSizeChanged(int w, int h, int oldw, int oldh)
@@ -44,13 +45,14 @@ namespace Sudoku_JB
         protected override void OnDraw(Canvas canvas)
         {
             base.OnDraw(canvas);
-            //TODO: Find Simpler way to draw colors on canvas
             Paint background = new Paint
             {
                 Color = Resources.GetColor(Resource.Color.puzzle_background,null)
             };
-            // may not need this -> canvas.DrawPaint(background);
-            canvas.DrawRect(0, 0, canvas.Height, canvas.Width, background);
+
+            // Parameters are Left, Top, Right, Bottom, paint to use
+            canvas.DrawRect(0, 0, canvas.Width, canvas.Height, background);
+
             //Draw the Board
             //Define Colors for the grid lines
             Paint dark = new Paint
@@ -67,88 +69,88 @@ namespace Sudoku_JB
             {
                 Color = Resources.GetColor(Resource.Color.puzzle_light, null)
             };
-
-            //Draw the hints
-            // Pick a hint based on number of moves left
-            int[] c =
-            {
+            if(Preferences.getHints(Context)){
+                //Draw the hints
+                // Pick a hint based on number of moves left
+                int[] c =
+                {
                 Resource.Color.puzzle_hint_0,
                 Resource.Color.puzzle_hint_1,
                 Resource.Color.puzzle_hint_2
             };
-            Paint hint = new Paint();
-            Rect r = new Rect();
-            for (int i = 0; i < 9; i++)
-            {
-                for (int j = 0; j < 9; j++)
+                Paint hint = new Paint();
+                Rect r = new Rect();
+                for (int i = 0; i < 9; i++)
                 {
-                    int movesLeft = 9 - game.getUsedTiles(i, j).Length;
-                    Log.Debug(TAG, i +","+j+"="+movesLeft);
-                    if (movesLeft < c.Length)
+                    for (int j = 0; j < 9; j++)
                     {
-                        if (game.getTile(i, j) == 0)
+                        int movesLeft = 9 - game.getUsedTiles(i, j).Length;
+                        // Log.Debug(TAG, i +","+j+"="+movesLeft);
+                        if (movesLeft < c.Length)
                         {
-                            getRect(i, j, r);
-                            hint.Color = Resources.GetColor(c[movesLeft], null);
-                            canvas.DrawRect(r, hint);
+                            if (game.getTile(i, j) == 0)
+                            {
+                                getRect(i, j, r);
+                                hint.Color = Resources.GetColor(c[movesLeft], null);
+                                canvas.DrawRect(r, hint);
+                            }
                         }
                     }
                 }
-            }
 
-            // Determine if the square must be a particular value
-            // Might make this another level of hints.
-            int startx;
-            int starty;
-            int count;
-            int hintx = 0;
-            int hinty = 0;
-            hint.Color = Resources.GetColor(c[1], null);
+                // Determine if the square must be a particular value
+                // Might make this another level of hints.
+                int startx;
+                int starty;
+                int count;
+                int hintx = 0;
+                int hinty = 0;
+                hint.Color = Resources.GetColor(c[1], null);
 
-            for (int cellBlock = 0; cellBlock < 9; cellBlock++)
-            {
-                starty = (cellBlock / 3) *3;
-                startx = (cellBlock%3) * 3;
-                for (int number = 1; number <= 9; number++)
+                for (int cellBlock = 0; cellBlock < 9; cellBlock++)
                 {
-                    count = 0;
-                    for (int j = startx; j < startx + 3; j++)
+                    starty = (cellBlock / 3) * 3;
+                    startx = (cellBlock % 3) * 3;
+                    for (int number = 1; number <= 9; number++)
                     {
-                        for (int k = starty; k < starty + 3; k++)
+                        count = 0;
+                        for (int j = startx; j < startx + 3; j++)
                         {
-                            int usedLength = game.getUsedTiles(j, k).Length;
-                            // Log.Debug(TAG, "cell block " + cellBlock + "(" + j + "," + k + ") used = " + usedLength);
-                            for (int l = 0; l < usedLength; l++)
+                            for (int k = starty; k < starty + 3; k++)
                             {
-                                if (game.getUsedTiles(j, k)[l] == number || game.getTile(j, k) != 0)
+                                int usedLength = game.getUsedTiles(j, k).Length;
+                                // Log.Debug(TAG, "cell block " + cellBlock + "(" + j + "," + k + ") used = " + usedLength);
+                                for (int l = 0; l < usedLength; l++)
                                 {
-                                    count++;
-                                    break;
-                                }
-                                else
-                                {
-                                    if (game.getUsedTiles(j, k)[l] > number)
+                                    if (game.getUsedTiles(j, k)[l] == number || game.getTile(j, k) != 0)
                                     {
-                                        hintx = j;
-                                        hinty = k;
+                                        count++;
                                         break;
+                                    }
+                                    else
+                                    {
+                                        if (game.getUsedTiles(j, k)[l] > number)
+                                        {
+                                            hintx = j;
+                                            hinty = k;
+                                            break;
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
-                    if (count == 8)
-                    {
-                        getRect(hintx, hinty, r);
-                        canvas.DrawRect(r, hint);
-                        // Log.Debug(TAG, "DRAWING (" + hintx + "," + hinty + ") number "+number+", cell block " +cellBlock + ", startx "+startx+", starty "+ starty+ ", count "+count);
-                        count = 0;
-                        hintx = 0;
-                        hinty = 0;
+                        if (count == 8)
+                        {
+                            getRect(hintx, hinty, r);
+                            canvas.DrawRect(r, hint);
+                            // Log.Debug(TAG, "DRAWING (" + hintx + "," + hinty + ") number "+number+", cell block " +cellBlock + ", startx "+startx+", starty "+ starty+ ", count "+count);
+                            count = 0;
+                            hintx = 0;
+                            hinty = 0;
+                        }
                     }
                 }
             }
-
 
             //Draw the minor grid lines
             for (int i = 0; i < 9; i++)
@@ -256,8 +258,8 @@ namespace Sudoku_JB
             } else
             {
                 Log.Debug(TAG, "setSelectedTile: invalid: " + tile);
-                // TODO: Debug on error animation (shake screen)
-                // StartAnimation(ViewAnimationUtils.loadAnimation(game, Resource.anim.shake));
+                // TODO: Test shake screen once KeyPad is functional
+                StartAnimation(AnimationUtils.LoadAnimation(game, Resource.Animation.shake));
             }
         }
         public override bool OnTouchEvent(MotionEvent e)

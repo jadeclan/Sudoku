@@ -23,7 +23,7 @@ namespace Sudoku_JB
         private int[] puzzle;
         private PuzzleView puzzleView;
 
-        //TODO: Develop method to create games based on selected difficulty
+        //TODO: Develop method to create random games based on selected difficulty
         private String easyPuzzle =
             "360000000004230800000004200" +
             "070460003820000014500013020" +
@@ -97,13 +97,12 @@ namespace Sudoku_JB
         {
             puzzle[y * 9 + x] = value;
         }
-        //TODO: Can the getTileString method be made protected?
         public String getTileString(int x, int y)
         {
             int v = getTile(x, y);
             if (v == 0) return "";
+            // Convert an integer to a character value (ie,zero = 48)
             v = v + 48;
-            //TODO: Find an easier way to convert integer to string
             char charValue = (char)v;
             string stringValue = "" + charValue;
             return stringValue;

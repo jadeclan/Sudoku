@@ -6,6 +6,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Preferences;
+using Android.Util;
 
 namespace Sudoku_JB
 {
@@ -24,7 +25,7 @@ namespace Sudoku_JB
                 FindViewById<Button>(Resource.Id.continue_button);
             continueButton.Click += (sender, e) =>
             {
-                // todo Implement Continue a Game
+                // TODO: Implement Continue a Game
             };
 
             // Button to start a new game
@@ -98,8 +99,7 @@ namespace Sudoku_JB
         }
         private void startGame(int i)
         {
-            Console.WriteLine("Option {0} selected", i);
-            // todo startGame(arg.Item);
+            Console.WriteLine("Option " + i+ " selected");
             var intent = new Intent(this, typeof(GameActivity));
             intent.PutExtra("difficultyLevel", i);
             StartActivity(intent);
