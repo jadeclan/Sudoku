@@ -202,8 +202,8 @@ namespace Sudoku_JB
             {
                 Android.Util.Log.Debug(TAG, "Number used " + tiles.Length);
                 Android.Util.Log.Debug(TAG, "showKeypad: used=" + toPuzzleString(tiles));
-                // Dialog v = new Keypad(this, tiles, puzzleView);
-                // v.Show();
+                Dialog v = new Keypad(this, tiles, puzzleView);
+                v.Show();
             }
         }
     }

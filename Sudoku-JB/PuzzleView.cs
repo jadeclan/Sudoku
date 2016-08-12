@@ -258,7 +258,6 @@ namespace Sudoku_JB
             } else
             {
                 Log.Debug(TAG, "setSelectedTile: invalid: " + tile);
-                // TODO: Test shake screen once KeyPad is functional
                 StartAnimation(AnimationUtils.LoadAnimation(game, Resource.Animation.shake));
             }
         }

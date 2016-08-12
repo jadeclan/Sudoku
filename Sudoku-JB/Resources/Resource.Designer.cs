@@ -122,23 +122,53 @@ namespace Sudoku_JB
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f090003
-			public const int about_button = 2131296259;
+			// aapt resource value: 0x7f09000d
+			public const int about_button = 2131296269;
 			
 			// aapt resource value: 0x7f090000
 			public const int about_content = 2131296256;
 			
-			// aapt resource value: 0x7f090001
-			public const int continue_button = 2131296257;
+			// aapt resource value: 0x7f09000b
+			public const int continue_button = 2131296267;
 			
-			// aapt resource value: 0x7f090004
-			public const int exit_button = 2131296260;
+			// aapt resource value: 0x7f09000e
+			public const int exit_button = 2131296270;
+			
+			// aapt resource value: 0x7f090001
+			public const int keypad = 2131296257;
 			
 			// aapt resource value: 0x7f090002
-			public const int new_button = 2131296258;
+			public const int keypad_1 = 2131296258;
+			
+			// aapt resource value: 0x7f090003
+			public const int keypad_2 = 2131296259;
+			
+			// aapt resource value: 0x7f090004
+			public const int keypad_3 = 2131296260;
 			
 			// aapt resource value: 0x7f090005
-			public const int settings = 2131296261;
+			public const int keypad_4 = 2131296261;
+			
+			// aapt resource value: 0x7f090006
+			public const int keypad_5 = 2131296262;
+			
+			// aapt resource value: 0x7f090007
+			public const int keypad_6 = 2131296263;
+			
+			// aapt resource value: 0x7f090008
+			public const int keypad_7 = 2131296264;
+			
+			// aapt resource value: 0x7f090009
+			public const int keypad_8 = 2131296265;
+			
+			// aapt resource value: 0x7f09000a
+			public const int keypad_9 = 2131296266;
+			
+			// aapt resource value: 0x7f09000c
+			public const int new_button = 2131296268;
+			
+			// aapt resource value: 0x7f09000f
+			public const int settings = 2131296271;
 			
 			static Id()
 			{
@@ -157,7 +187,10 @@ namespace Sudoku_JB
 			public const int About = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int keypad = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int Main = 2130903042;
 			
 			static Layout()
 			{

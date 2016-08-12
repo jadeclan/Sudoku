@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutActivity.cs" />
+    <Compile Include="Keypad.cs" />
     <Compile Include="Preferences.cs" />
     <Compile Include="PuzzleView.cs" />
     <Compile Include="GameActivity.cs" />
@@ -104,6 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\anim\cycle_7.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\keypad.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
