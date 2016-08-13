@@ -88,7 +88,7 @@ namespace Sudoku_JB
                     if (tile == value) return false;
                 }
             }
-            setTileIfValid(x, y, value);
+            setTile(x, y, value);
             calculateUsedTiles();
             return true;
         }

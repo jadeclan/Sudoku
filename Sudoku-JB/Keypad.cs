@@ -49,23 +49,13 @@ namespace Sudoku_JB
         }
 
         private void setListeners()
-        {/*
+        {
            for(int i = 0; i<keys.Length; i++)
            {
                int t = i + 1;
-               keys[i].SetOnClickListener(new View.IOnClickListener()
-               {
-                   public void onClick(View v)
-                   {
-                       returnResult(t);
-                   }
-               }); 
+               keys[i].Click += (sender,e) => returnResult(t);
            }
-           keypad.OnClickListener(new View.IOnClickListener(){
-               public void onClick(View v)
-               {
-                   returnResult(0);
-               }}); */
+            keypad.Click += (sender, e) => returnResult(0);
         }
         public override bool OnKeyDown([GeneratedEnum] Keycode keyCode, KeyEvent e)
         {
