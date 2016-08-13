@@ -41,5 +41,11 @@ namespace Sudoku_JB
         {
             return PreferenceManager.GetDefaultSharedPreferences(context).GetBoolean(OPT_HINTS, OPT_HINTS_DEFAULT);
         }
+
+        // Get the current value of the music option
+        public static Boolean getMusic(Context context)
+        {
+            return PreferenceManager.GetDefaultSharedPreferences(context).GetBoolean(OPT_MUSIC, OPT_MUSIC_DEFAULT);
+        }
     }
 }

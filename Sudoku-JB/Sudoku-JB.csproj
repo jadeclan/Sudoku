@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="AboutActivity.cs" />
     <Compile Include="Keypad.cs" />
+    <Compile Include="Music.cs" />
     <Compile Include="Preferences.cs" />
     <Compile Include="PuzzleView.cs" />
     <Compile Include="GameActivity.cs" />
@@ -108,6 +109,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\keypad.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\game.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\raw\main.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

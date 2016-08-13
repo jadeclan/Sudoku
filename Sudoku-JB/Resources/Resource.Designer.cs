@@ -63,35 +63,35 @@ namespace Sudoku_JB
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f060009
-			public const int background = 2131099657;
+			// aapt resource value: 0x7f070009
+			public const int background = 2131165193;
 			
-			// aapt resource value: 0x7f060000
-			public const int puzzle_background = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int puzzle_background = 2131165184;
 			
-			// aapt resource value: 0x7f060003
-			public const int puzzle_dark = 2131099651;
+			// aapt resource value: 0x7f070003
+			public const int puzzle_dark = 2131165187;
 			
-			// aapt resource value: 0x7f060004
-			public const int puzzle_foreground = 2131099652;
+			// aapt resource value: 0x7f070004
+			public const int puzzle_foreground = 2131165188;
 			
-			// aapt resource value: 0x7f060001
-			public const int puzzle_hilite = 2131099649;
+			// aapt resource value: 0x7f070001
+			public const int puzzle_hilite = 2131165185;
 			
-			// aapt resource value: 0x7f060005
-			public const int puzzle_hint_0 = 2131099653;
+			// aapt resource value: 0x7f070005
+			public const int puzzle_hint_0 = 2131165189;
 			
-			// aapt resource value: 0x7f060006
-			public const int puzzle_hint_1 = 2131099654;
+			// aapt resource value: 0x7f070006
+			public const int puzzle_hint_1 = 2131165190;
 			
-			// aapt resource value: 0x7f060007
-			public const int puzzle_hint_2 = 2131099655;
+			// aapt resource value: 0x7f070007
+			public const int puzzle_hint_2 = 2131165191;
 			
-			// aapt resource value: 0x7f060002
-			public const int puzzle_light = 2131099650;
+			// aapt resource value: 0x7f070002
+			public const int puzzle_light = 2131165186;
 			
-			// aapt resource value: 0x7f060008
-			public const int puzzle_selected = 2131099656;
+			// aapt resource value: 0x7f070008
+			public const int puzzle_selected = 2131165192;
 			
 			static Color()
 			{
@@ -122,53 +122,53 @@ namespace Sudoku_JB
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f09000d
-			public const int about_button = 2131296269;
+			// aapt resource value: 0x7f0a000d
+			public const int about_button = 2131361805;
 			
-			// aapt resource value: 0x7f090000
-			public const int about_content = 2131296256;
+			// aapt resource value: 0x7f0a0000
+			public const int about_content = 2131361792;
 			
-			// aapt resource value: 0x7f09000b
-			public const int continue_button = 2131296267;
+			// aapt resource value: 0x7f0a000b
+			public const int continue_button = 2131361803;
 			
-			// aapt resource value: 0x7f09000e
-			public const int exit_button = 2131296270;
+			// aapt resource value: 0x7f0a000e
+			public const int exit_button = 2131361806;
 			
-			// aapt resource value: 0x7f090001
-			public const int keypad = 2131296257;
+			// aapt resource value: 0x7f0a0001
+			public const int keypad = 2131361793;
 			
-			// aapt resource value: 0x7f090002
-			public const int keypad_1 = 2131296258;
+			// aapt resource value: 0x7f0a0002
+			public const int keypad_1 = 2131361794;
 			
-			// aapt resource value: 0x7f090003
-			public const int keypad_2 = 2131296259;
+			// aapt resource value: 0x7f0a0003
+			public const int keypad_2 = 2131361795;
 			
-			// aapt resource value: 0x7f090004
-			public const int keypad_3 = 2131296260;
+			// aapt resource value: 0x7f0a0004
+			public const int keypad_3 = 2131361796;
 			
-			// aapt resource value: 0x7f090005
-			public const int keypad_4 = 2131296261;
+			// aapt resource value: 0x7f0a0005
+			public const int keypad_4 = 2131361797;
 			
-			// aapt resource value: 0x7f090006
-			public const int keypad_5 = 2131296262;
+			// aapt resource value: 0x7f0a0006
+			public const int keypad_5 = 2131361798;
 			
-			// aapt resource value: 0x7f090007
-			public const int keypad_6 = 2131296263;
+			// aapt resource value: 0x7f0a0007
+			public const int keypad_6 = 2131361799;
 			
-			// aapt resource value: 0x7f090008
-			public const int keypad_7 = 2131296264;
+			// aapt resource value: 0x7f0a0008
+			public const int keypad_7 = 2131361800;
 			
-			// aapt resource value: 0x7f090009
-			public const int keypad_8 = 2131296265;
+			// aapt resource value: 0x7f0a0009
+			public const int keypad_8 = 2131361801;
 			
-			// aapt resource value: 0x7f09000a
-			public const int keypad_9 = 2131296266;
+			// aapt resource value: 0x7f0a000a
+			public const int keypad_9 = 2131361802;
 			
-			// aapt resource value: 0x7f09000c
-			public const int new_button = 2131296268;
+			// aapt resource value: 0x7f0a000c
+			public const int new_button = 2131361804;
 			
-			// aapt resource value: 0x7f09000f
-			public const int settings = 2131296271;
+			// aapt resource value: 0x7f0a000f
+			public const int settings = 2131361807;
 			
 			static Id()
 			{
@@ -205,11 +205,11 @@ namespace Sudoku_JB
 		public partial class Menu
 		{
 			
-			// aapt resource value: 0x7f080000
-			public const int DifficultyMenu = 2131230720;
+			// aapt resource value: 0x7f090000
+			public const int DifficultyMenu = 2131296256;
 			
-			// aapt resource value: 0x7f080001
-			public const int SettingsMenu = 2131230721;
+			// aapt resource value: 0x7f090001
+			public const int SettingsMenu = 2131296257;
 			
 			static Menu()
 			{
@@ -221,74 +221,93 @@ namespace Sudoku_JB
 			}
 		}
 		
+		public partial class Raw
+		{
+			
+			// aapt resource value: 0x7f060000
+			public const int game = 2131099648;
+			
+			// aapt resource value: 0x7f060001
+			public const int main = 2131099649;
+			
+			static Raw()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Raw()
+			{
+			}
+		}
+		
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f070004
-			public const int about_label = 2131165188;
+			// aapt resource value: 0x7f080004
+			public const int about_label = 2131230724;
 			
-			// aapt resource value: 0x7f070007
-			public const int about_text = 2131165191;
+			// aapt resource value: 0x7f080007
+			public const int about_text = 2131230727;
 			
-			// aapt resource value: 0x7f070006
-			public const int about_title = 2131165190;
+			// aapt resource value: 0x7f080006
+			public const int about_title = 2131230726;
 			
-			// aapt resource value: 0x7f070000
-			public const int app_name = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int app_name = 2131230720;
 			
-			// aapt resource value: 0x7f070002
-			public const int continue_label = 2131165186;
+			// aapt resource value: 0x7f080002
+			public const int continue_label = 2131230722;
 			
-			// aapt resource value: 0x7f070010
-			public const int easy_label = 2131165200;
+			// aapt resource value: 0x7f080010
+			public const int easy_label = 2131230736;
 			
-			// aapt resource value: 0x7f070005
-			public const int exit_label = 2131165189;
+			// aapt resource value: 0x7f080005
+			public const int exit_label = 2131230725;
 			
-			// aapt resource value: 0x7f070013
-			public const int game_title = 2131165203;
+			// aapt resource value: 0x7f080013
+			public const int game_title = 2131230739;
 			
-			// aapt resource value: 0x7f070012
-			public const int hard_label = 2131165202;
+			// aapt resource value: 0x7f080012
+			public const int hard_label = 2131230738;
 			
-			// aapt resource value: 0x7f07000e
-			public const int hints_summary = 2131165198;
+			// aapt resource value: 0x7f08000e
+			public const int hints_summary = 2131230734;
 			
-			// aapt resource value: 0x7f07000d
-			public const int hints_title = 2131165197;
+			// aapt resource value: 0x7f08000d
+			public const int hints_title = 2131230733;
 			
-			// aapt resource value: 0x7f070015
-			public const int keypad_title = 2131165205;
+			// aapt resource value: 0x7f080015
+			public const int keypad_title = 2131230741;
 			
-			// aapt resource value: 0x7f070001
-			public const int main_title = 2131165185;
+			// aapt resource value: 0x7f080001
+			public const int main_title = 2131230721;
 			
-			// aapt resource value: 0x7f070011
-			public const int medium_label = 2131165201;
+			// aapt resource value: 0x7f080011
+			public const int medium_label = 2131230737;
 			
-			// aapt resource value: 0x7f07000c
-			public const int music_summary = 2131165196;
+			// aapt resource value: 0x7f08000c
+			public const int music_summary = 2131230732;
 			
-			// aapt resource value: 0x7f07000b
-			public const int music_title = 2131165195;
+			// aapt resource value: 0x7f08000b
+			public const int music_title = 2131230731;
 			
-			// aapt resource value: 0x7f070003
-			public const int new_game_label = 2131165187;
+			// aapt resource value: 0x7f080003
+			public const int new_game_label = 2131230723;
 			
-			// aapt resource value: 0x7f07000f
-			public const int new_game_title = 2131165199;
+			// aapt resource value: 0x7f08000f
+			public const int new_game_title = 2131230735;
 			
-			// aapt resource value: 0x7f070014
-			public const int no_moves_label = 2131165204;
+			// aapt resource value: 0x7f080014
+			public const int no_moves_label = 2131230740;
 			
-			// aapt resource value: 0x7f070008
-			public const int settings_label = 2131165192;
+			// aapt resource value: 0x7f080008
+			public const int settings_label = 2131230728;
 			
-			// aapt resource value: 0x7f07000a
-			public const int settings_shortcut = 2131165194;
+			// aapt resource value: 0x7f08000a
+			public const int settings_shortcut = 2131230730;
 			
-			// aapt resource value: 0x7f070009
-			public const int settings_title = 2131165193;
+			// aapt resource value: 0x7f080009
+			public const int settings_title = 2131230729;
 			
 			static String()
 			{

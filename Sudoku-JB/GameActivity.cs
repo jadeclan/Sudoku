@@ -52,6 +52,18 @@ namespace Sudoku_JB
             puzzleView.RequestFocus();
         }
 
+        protected override void OnResume()
+        {
+            base.OnResume();
+            Music.play(this, Resource.Raw.game);
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            Music.stop(this);
+        }
+
         static private String toPuzzleString(int[] puzzle)
         {
             StringBuilder buffer = new StringBuilder();

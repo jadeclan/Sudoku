@@ -69,6 +69,18 @@ namespace Sudoku_JB
             };
 
         }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            Music.play(this, Resource.Raw.main);
+        }
+
+        protected override void OnPause()
+        {
+            base.OnPause();
+            Music.stop(this);
+        }
         /// <summary>
         /// Initiation of management of shared preferences (game settings)
         /// Note: XML for choices contained in Resources/menu/SettingsMenu.xml
