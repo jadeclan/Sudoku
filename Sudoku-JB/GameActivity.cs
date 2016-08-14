@@ -1,12 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
@@ -19,9 +16,14 @@ namespace Sudoku_JB
         public const int EASY = 0;
         public const int MEDIUM = 1;
         private const int HARD = 2;
+        public const int CONTINUE = -1;
+
+        public const String difficultyLevel ="Sudoku_JB.difficulty";
 
         private int[] puzzle;
         private PuzzleView puzzleView;
+
+        private const String PREF_PUZZLE = "puzzle";
 
         //TODO: Develop method to create random games based on selected difficulty
         private String easyPuzzle =
@@ -50,18 +52,29 @@ namespace Sudoku_JB
             puzzleView = new PuzzleView(this);
             SetContentView(puzzleView);
             puzzleView.RequestFocus();
+
+            // If the activity is restarted, do a continue next time
+            Intent.PutExtra("difficultyLevel", CONTINUE);
         }
 
         protected override void OnResume()
         {
             base.OnResume();
-            Music.play(this, Resource.Raw.game);
+            Music.play(this, Resource.Raw.game);           
         }
 
         protected override void OnPause()
         {
             base.OnPause();
             Music.stop(this);
+            // Save the current puzzle
+            GetPreferences(FileCreationMode.Private).Edit().PutString(PREF_PUZZLE, toPuzzleString(puzzle)).Commit();
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            GetPreferences(FileCreationMode.Private).Edit().PutString(PREF_PUZZLE, toPuzzleString(puzzle)).Commit();
         }
 
         static private String toPuzzleString(int[] puzzle)
@@ -131,6 +144,9 @@ namespace Sudoku_JB
                     break;
                 case MEDIUM:
                     puzzle = mediumPuzzle;
+                    break;
+                case CONTINUE:
+                    puzzle = GetPreferences(FileCreationMode.Private).GetString(PREF_PUZZLE, easyPuzzle);
                     break;
                 default:
                     break;

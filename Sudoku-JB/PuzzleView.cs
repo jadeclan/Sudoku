@@ -18,6 +18,7 @@ namespace Sudoku_JB
         private int selX;
         private int selY;
         private Rect selRect = new Rect();
+
         //TODO: Discuss with Jordan the syntax of PuzzleView constructor
         public PuzzleView(Context context) : base(context)
         {
@@ -155,7 +156,7 @@ namespace Sudoku_JB
             //Draw the minor grid lines
             for (int i = 0; i < 9; i++)
             {
-                //Parameters(start x, start y, stop x, stop y, paint)
+                // Parameters(start x, start y, stop x, stop y, paint)
                 canvas.DrawLine(0, i * height, canvas.Width, i * height, light);
                 canvas.DrawLine(0, i * height + 1, canvas.Width, i * height + 1, hilite);
                 canvas.DrawLine(i * width, 0, i * width, canvas.Height, light);
@@ -174,8 +175,8 @@ namespace Sudoku_JB
                 canvas.DrawLine(i * width + 1, 0, i * width + 1, canvas.Height, hilite);
             }
 
-            //Draw the numbers
-            //Define color and style for numbers
+            // Draw the numbers
+            // Define color and style for numbers
             Paint foreground = new Paint
             {
                 Color = Resources.GetColor(Resource.Color.puzzle_foreground, null),
@@ -186,11 +187,11 @@ namespace Sudoku_JB
             foreground.TextScaleX = (width / height);
             foreground.TextAlign = (Paint.Align.Center);
 
-            //Draw the number in the center of the tile
+            // Draw the number in the center of the tile
             FontMetrics fm = foreground.GetFontMetrics();
-            //Centering in X: use alignment( and X at midpoint)
+            // Centering in X: use alignment( and X at midpoint)
             float x = width / 2;
-            //Centering in Y: measure ascent and descent first
+            // Centering in Y: measure ascent and descent first
             float y = height / 2 - (fm.Ascent + fm.Descent) / 2;
             for (int i = 0; i < 9; i++)
             {
@@ -201,7 +202,7 @@ namespace Sudoku_JB
                 }
             }
 
-            //Draw the selection
+            // Draw the selection
             Paint selected = new Paint
             {
                 Color = Resources.GetColor(Resource.Color.puzzle_selected, null)

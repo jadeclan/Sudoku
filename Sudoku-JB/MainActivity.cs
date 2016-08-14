@@ -1,18 +1,20 @@
 ﻿using System;
 using Android.App;
 using Android.Content;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using Android.Preferences;
-using Android.Util;
 
 namespace Sudoku_JB
 {
     [Activity(MainLauncher = true)]
     public class MainActivity : Activity
     {
+        // TODO: Check for winning condition and handle
+        // TODO: Include exit button on keypad and on puzzleView(??)
+        // TODO: Instructions on how to play
+        // TODO: Implement better hint colors (also explain meaning)
+        // TODO: Method documentation
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -25,7 +27,7 @@ namespace Sudoku_JB
                 FindViewById<Button>(Resource.Id.continue_button);
             continueButton.Click += (sender, e) =>
             {
-                // TODO: Implement Continue a Game
+                startGame(GameActivity.CONTINUE);
             };
 
             // Button to start a new game
@@ -44,12 +46,7 @@ namespace Sudoku_JB
                 */
                     startGame(arg.Item.NumericShortcut - 48);
                 };
-
-                /*menu.DismissEvent += (s2, arg1) =>
-                {
-                    Console.WriteLine("menu dismissed");
-                };*/
-
+                // TODO: Remove flag from breakpoint marker (why is it there?)
                 menu.Show();
             };
 
@@ -67,7 +64,6 @@ namespace Sudoku_JB
             {
                Finish();
             };
-
         }
 
         protected override void OnResume()
